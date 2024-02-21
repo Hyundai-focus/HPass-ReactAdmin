@@ -1,0 +1,16 @@
+/* 전역 스타일 */
+:root {
+    --green: #0F694A;
+    --black: #1e1e1eea;
+  }
+
+body {  
+    margin: 0;
+    padding: 0;
+    background-color:#f0f6f4a6;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin-top: 80px;;
+}
+

@@ -8,7 +8,7 @@ const Login = () => {
         <>
             <Header/>
             <div className='LoginDiv'>
-                <p>로그인</p>
+                <p>접근 불가능한 계정입니다</p>
                 <button>
                     <img alt="logo" src={Logo}/>
                     <p>로 로그인하기</p>
