@@ -7,7 +7,6 @@ const ProductRes=()=>{
     const total = Number(totalMoney.total)
     const coupon = useSelector((state : RootState) => state.couponName);
     const discountMoney = total * Number(coupon.coupon.split("%")[0].slice(-2)) / 100
-
     return(
         <div className="ProductRes">
             <div className="ProductResLeft">
