@@ -21,13 +21,14 @@ const Login = () => {
                 userId: login.email,
                 password: login.password,
             });
-            if(res.role !== 'ROLE_POS'){
-                navigate('/invalid')
+            if(res.role !== 'ROLE_POS') navigate('/invalid')
+            else{
+
             }
-            console.log(res)
         }
         catch(e){
             console.log(e)
+            return
         }
 
     }
