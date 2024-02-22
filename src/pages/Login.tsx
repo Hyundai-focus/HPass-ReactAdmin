@@ -23,7 +23,7 @@ const Login = () => {
             });
             if(res.role !== 'ROLE_POS') navigate('/invalid')
             else{
-
+                navigate('/payment')
             }
         }
         catch(e){
