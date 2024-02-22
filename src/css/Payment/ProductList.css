@@ -1,0 +1,38 @@
+.ProductList{
+    margin-left: 80px;
+    background-color: white;
+    width: 67.5vw;
+    border-radius: 0.5rem;
+    height: 50vh;
+}
+.TopBar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--black);
+    color: white;
+    text-align: center;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    font-size: 0.8rem;
+}
+.TopBar p{
+    line-height: 1.5rem;
+}
+.ProductList table{
+    width: 97%;
+    margin-left: 1.5%;
+    font-size: 0.9rem;
+    border-collapse: collapse;
+}
+.ProductList tr{
+    height: 4rem;
+    text-align: center;
+}
+.ProductList td {
+    border-bottom: 1px solid rgb(233, 233, 233);
+    padding: 10px;
+}
+.ProductList hr{
+    border: none;
+    border-left: 0.25px solid rgb(116, 116, 116); 
+}

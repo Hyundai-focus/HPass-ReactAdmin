@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "esModuleInterop": true,
+      "baseUrl": "src",
+      "paths": {
+        "@assets/*":["assets/*"],
+        "@components/*": ["components/*"], 
+        "@css/*": ["css/*"], 
+        "@hooks/*": ["hooks/*"], 
+        "@pages/*": ["pages/*"],
+        "@utils/*":["utils/*"],
+      }
+    },
+    "include": ["src/**/*.tsx", "src/**/*.ts"]
+  }
