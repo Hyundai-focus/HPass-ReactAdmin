@@ -1,7 +1,12 @@
 import React from "react";
 import 'css/Payment/ProductRes.css'
-
+import { useSelector } from 'react-redux';
+import { RootState } from "store/store";
 const ProductRes=()=>{
+    const totalMoney = useSelector((state : RootState) => state.totalMoney);
+    const total = Number(totalMoney.total)
+    const coupon = useSelector((state : RootState) => state.couponName);
+    const discountMoney = total * Number(coupon.coupon.split("%")[0].slice(-2)) / 100
     return(
         <div className="ProductRes">
             <div className="ProductResLeft">
@@ -13,12 +18,12 @@ const ProductRes=()=>{
                 <p style={{border:'none'}}>추가 결제 금액</p>
             </div>
             <div className="ProductResRight">
-                <p>48000</p>
+                <p>{total}</p>
+                <p>{discountMoney}</p>
+                <p>{total - discountMoney}</p>
                 <p>0</p>
-                <p>48000</p>
                 <p>0</p>
-                <p>0</p>
-                <p style={{border:'none'}}>0</p>
+                <p >0</p>
             </div>
         </div>
     )

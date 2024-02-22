@@ -1,9 +1,12 @@
 .ProductList{
     margin-left: 80px;
-    background-color: white;
     width: 67.5vw;
+    height: 56vh;
+}
+.ProductListTop{
+    height: 49.5vh;
+    background-color: white;
     border-radius: 0.5rem;
-    height: 50vh;
 }
 .TopBar{
     width: 100%;
@@ -17,6 +20,10 @@
 }
 .TopBar p{
     line-height: 1.5rem;
+}
+.ProductListTopOverflow{
+    height: 88%;
+    overflow-y: auto;
 }
 .ProductList table{
     width: 97%;
@@ -36,3 +43,36 @@
     border: none;
     border-left: 0.25px solid rgb(116, 116, 116); 
 }
+
+.TotalInfo{
+    width: 67.5vw;
+    background-color: white;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.TotalInfo div{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.TotalInfo #leftP{
+    width: 20%;
+    margin-left: 7.5%;
+    color: gray;
+}
+.TotalInfo #rightP{
+    width:60%;
+    text-align: right;
+    font-weight:bold;
+}
+
+.TotalInfo hr{
+    border: none;
+    border-left: 2px solid lightgrey;
+}
+
