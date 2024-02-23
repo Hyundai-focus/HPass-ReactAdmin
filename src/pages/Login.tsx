@@ -16,7 +16,6 @@ const Login = () => {
         password: "",
       });
     const tryLogin= async() =>{
-        console.log(process.env.REACT_APP_API_URL)
         try{
             const res = await post(`${apiUrl}/login`, {
                 userId: login.email,
