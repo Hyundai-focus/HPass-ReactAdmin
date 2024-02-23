@@ -13,6 +13,7 @@ const Routing=()=>{
                 <Route path="/invalid" element={<LoginInvalid/>}/>
                 <Route path="/payment" element={<Payment/>}/>
                 <Route path="/control" element={<Control/>}/>
+                <Route path="/Payment" element={<Payment/>}/>
             </Routes>
         </BrowserRouter>
     )

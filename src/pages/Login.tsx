@@ -22,9 +22,7 @@ const Login = () => {
                 password: login.password,
             });
             if(res.role !== 'ROLE_POS') navigate('/invalid')
-            else{
-                navigate('/payment')
-            }
+            else navigate('/payment')
         }
         catch(e){
             console.log(e)

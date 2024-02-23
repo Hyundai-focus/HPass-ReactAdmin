@@ -14,6 +14,7 @@ const config: Configuration = {
       "pages": require('path').resolve(__dirname, 'src/pages/'),
       "utils": require('path').resolve(__dirname, 'src/utils/'),
       "store": require('path').resolve(__dirname, 'src/store/'),
+
     },
     fallback: {
       "path": require.resolve("path-browserify"),
