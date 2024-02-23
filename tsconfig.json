@@ -4,12 +4,13 @@
       "esModuleInterop": true,
       "baseUrl": "src",
       "paths": {
-        "@assets/*":["assets/*"],
-        "@components/*": ["components/*"], 
-        "@css/*": ["css/*"], 
-        "@hooks/*": ["hooks/*"], 
-        "@pages/*": ["pages/*"],
-        "@utils/*":["utils/*"],
+        "assets/*":["assets/*"],
+        "components/*": ["components/*"], 
+        "css/*": ["css/*"], 
+        "hooks/*": ["hooks/*"], 
+        "pages/*": ["pages/*"],
+        "utils/*":["utils/*"],
+        "store/*":["store/*"],
       }
     },
     "include": ["src/**/*.tsx", "src/**/*.ts"]

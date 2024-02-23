@@ -1,0 +1,136 @@
+.modalOverlay {
+    justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+  }
+  .Modal {  
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-left: 1rem;
+    width: 27.5rem;
+    height: 35rem;
+    background-color: white;
+    border-radius: 0.25rem;
+  }
+  .Modal.modalFadeIn {
+    opacity: 1; /* 투명도를 1로 조절하여 나타나는 효과를 줍니다. */
+    pointer-events: auto; /* 클릭 이벤트를 활성화합니다. */
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  .Modal .alertModal_lo{
+    margin-top: 0.5rem;
+  }
+  .Modal .alertModal_lo div{
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  /* 모달이 사라질 때 애니메이션 효과 */
+  .Modal.modalFadeOut  {
+    opacity: 0;
+    animation: fadeOut 0.5s ease-in-out forwards;
+    pointer-events: auto; /* 클릭 이벤트 활성화 */
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  /* 페이드인 애니메이션 키프레임 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .Modal p{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
+  .Modal .CouponListDiv{
+    display: flex;
+    flex-direction: column;
+    height: 67.5%;
+    width: 90%;
+    margin-bottom: 1.25rem;
+    overflow-y: auto;
+  }
+  .Modal .CouponItem{
+    display: flex;
+    flex-direction: row;
+    border:none;
+    border-bottom: 1px solid lightgray;
+    min-height: 4rem;
+    max-height: 4rem;
+    align-items: center;
+  }
+  .Modal .CouponText{
+    width: 80%;
+  }
+  .Modal .CouponText p{
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  .Modal .CouponText .CouponDate{
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #989898;
+  }
+  .Modal .CouponItem button{
+    width: 20%;
+    height: 2rem;
+    border-radius: 0.25rem;
+  }
+  .Modal .CouponItem .disabled{
+    background-color: grey;
+  }
+  .Modal button{
+    width: 90%;
+    height: 2.75rem;
+    border-radius: 0.5rem;
+    border:none;
+    color:white;
+    background-color: var(--green);
+  }
+  
+  
+  /* 페이드인 애니메이션 키프레임 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* 투명한 상태에서 시작 */
+      transform: translateY(-20px); /* 위에서 내려오는 효과 */
+    }
+    to {
+      opacity: 1; /* 완전히 나타나는 상태 */
+      transform: translateY(0); /* 기본 위치 */
+    }
+  }
+  
+  /* 페이드아웃 애니메이션 키프레임 */
+  @keyframes fadeOut {
+    from {
+      opacity: 1; /* 완전한 상태에서 시작 */
+      transform: translateY(0); /* 기본 위치 */
+    }
+    to {
+      opacity: 0; /* 투명한 상태로 사라짐 */
+      transform: translateY(-20px); /* 위로 올라가는 효과 */
+      display: none; /* 애니메이션이 끝난 후에는 화면에서 사라짐 */
+    }
+  }

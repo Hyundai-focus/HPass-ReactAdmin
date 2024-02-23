@@ -1,5 +1,9 @@
-import React from "react";
+
+import React,{useMemo} from "react";
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux';
+import { setCoupon } from "store/reducer/couponMoney";
+import { setTotalMoney } from "store/reducer/totalMoney";
 
 const Button = styled.button`
     background-color: var(--black);
@@ -26,6 +30,15 @@ const Div = styled.div`
     margin-top:0.5rem;
 `
 const BottomButtons = () =>{
+    const dispatch = useDispatch();
+    const socket =useMemo(() => {
+        return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/controller`);
+    }, []); 
+    const clickPay =()=> {
+        socket.send(`addProduct:: []`);
+        dispatch(setCoupon("0")) 
+        dispatch(setTotalMoney(0))
+    }
     return(
         <Div>
             <ButtonDiv>
@@ -39,7 +52,7 @@ const BottomButtons = () =>{
                 <Button>현금영수증</Button>
             </ButtonDiv>
             <ButtonDiv>
-                <Button style={{backgroundColor:'#E11C1C'}}>결제</Button>
+                <Button onClick={clickPay} style={{backgroundColor:'#E11C1C'}}>결제</Button>
                 <Button>카드결제</Button>
                 <Button>현금결제</Button>
             </ButtonDiv>
