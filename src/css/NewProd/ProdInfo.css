@@ -1,0 +1,48 @@
+.ProdInfo{
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 15vw;
+    height: 28vw;
+}
+.IMGContainer{
+    width: 13vw;
+    height: 13vw;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.IMGContainer img{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.ProdInfo p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+}
+.ProdInfoBottom div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.BrandName{
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
+}
+.ProdName{
+    font-size: 1rem;
+    padding-top: 0.5rem;
+}
+.ProdInfoBottom p{
+    padding-top: 1.25vw;
+    font-size: 0.75vw;
+}

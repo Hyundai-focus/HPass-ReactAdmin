@@ -1,8 +1,8 @@
 /* 전역 스타일 */
 @font-face {
-    font-family: 'Happiness-Sans-Bold';
+    font-family: 'Happiness-Sans';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Bold.woff2') format('woff2');
-    font-weight: 700;
+    font-weight: 400; /* 일반체 */
     font-style: normal;
 }
 
@@ -13,7 +13,7 @@
   }
 
 body {  
-    font-family: 'Happiness-Sans-Bold', sans-serif;
+    font-family: 'Happiness-Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color:var(--lightGreen);
