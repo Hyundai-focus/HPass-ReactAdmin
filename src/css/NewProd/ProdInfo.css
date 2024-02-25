@@ -3,12 +3,12 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 18vw;
-    height: 50vh;
+    width: 15vw;
+    height: 28vw;
 }
 .IMGContainer{
-    width: 16vw;
-    height: 16vw;
+    width: 13vw;
+    height: 13vw;
     margin-left: 1vw;
     margin-top: 1vw;
     overflow:hidden;
@@ -43,6 +43,6 @@
     padding-top: 0.5rem;
 }
 .ProdInfoBottom p{
-    padding-top: 1rem;
-    font-size: 0.75rem;
+    padding-top: 1.25vw;
+    font-size: 0.75vw;
 }
