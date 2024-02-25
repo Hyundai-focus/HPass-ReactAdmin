@@ -4,6 +4,7 @@ import SideBar from "components/SideBar";
 import ProdInfo from "components/NewProd/ProdInfo";
 import ProdGraph from "components/NewProd/ProdGraph";
 import ProdList from "components/NewProd/ProdList";
+import NewProdModal from "components/Modal/NewProdModal";
 import "css/NewProd/NewProd.css"
 
 const NewProd = () => {
@@ -17,6 +18,7 @@ const NewProd = () => {
                 <ProdGraph/>
                 <ProdList/>
             </div>
+            {modal && <NewProdModal onClose={() => {setModal(false)}}/>}
         </>
     )
 }

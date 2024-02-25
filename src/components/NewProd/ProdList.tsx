@@ -58,8 +58,8 @@ const ProdList=()=>{
             </div>
             <div className="bottomList">
             {data.map((item, index) => (
-                <div>
-                <div className="bottomListItem" key={index}>
+                <div key={index}>
+                <div className="bottomListItem" >
                     <p className="ProdNum">pu{item.product_history_no}</p>
                     <p className="ProdPerson">{item.member_name}</p>
                     <p className="ProdDate">{item.product_history_dt}</p>

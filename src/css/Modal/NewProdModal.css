@@ -1,0 +1,67 @@
+.ProdModal{
+    height: 90%;
+    width: 90%;
+}
+.Modal .buttonDiv{
+    display: flex;    
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+}
+.buttonDiv button{
+    width: 48%;
+}
+.buttonDiv .closeButtonProd{
+    background-color: white;
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+.ProdModal .imgContainer{
+    margin-top: 5%;
+    width: 100%;
+    height: 75%;
+    border-radius: 50%;
+}
+.ProdModal .imgContainer img{
+    width: 100%;
+    border-radius: 0.5rem;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.ProdModal p{
+    margin: 0px;
+}
+.ProdModal div{
+    display: flex;
+    flex-direction: row;
+}
+.ProdModal .modalProdName{
+    margin-top: 1rem;    
+    margin-left: 0.75rem;
+}
+.ProdModal .modalProdName p{
+    font-size: 1.25rem;
+}
+.ProdModal .modalProdName .ProdBrand{
+    font-size: 2rem;
+}
+.ProdModal .modalProdName .ProdName{
+    line-height: 2rem;
+    margin-left: 0.5rem;
+}
+.ProdModal .modalmemberInfo{
+    justify-content: end;
+    margin-top: 0.75rem;
+    margin-right: 0.8rem;
+}
+.ProdModal .modalmemberInfo .memberNoTag{
+    font-size: 1rem;
+    line-height: 1.75rem;
+    margin-right: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.ProdModal .modalmemberInfo .memberName{
+    font-size: 1.25rem;
+}
