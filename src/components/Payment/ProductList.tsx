@@ -1,12 +1,13 @@
-
-
-import React,{useMemo,useState} from "react"
+import React,{useEffect, useMemo,useState} from "react"
 import 'css/Payment/ProductList.css'
 import CouponModal from "components/Modal/CouponModal"
 import { useDispatch } from 'react-redux'
-import { setTotalMoney } from "store/reducer/totalMoney"
 import { setCoupon } from "store/reducer/couponMoney"
+import { useSelector } from 'react-redux';
+import { RootState } from "store/store";
+import { setTotalMoney } from "store/reducer/totalMoney"
 const ProductList =() =>{
+    const totalList = useSelector((state : RootState) => state.paymentList);
     const dispatch = useDispatch();
     const [data,setData] =useState([])
     const [modal,setModal] =useState(false)
@@ -21,23 +22,21 @@ const ProductList =() =>{
 
     socket.onmessage=(e)=>{
         console.log(e.data)
-        if(e.data === "coupon")setModal(true) 
-        else {
-            setData(JSON.parse(e.data))
-            let calCnt = 0
-            let calMoney = 0
-            JSON.parse(e.data).forEach(item => {
-                calCnt += item.quantity
-                calMoney += item.total
-            });
-            console.log(calCnt, calMoney)
-            dispatch(setTotalMoney(calMoney))
-            setTotal({
-                cnt : calCnt,
-                money : calMoney,
-            })
-        }
     }
+    useEffect(()=>{
+        let calCnt = 0
+        let calMoney = 0
+        totalList.data.forEach((item) =>{
+            calCnt += item.quantity
+            calMoney += item.total
+        })
+        dispatch(setTotalMoney(calMoney))
+        setTotal({
+            cnt : calCnt,
+            money : calMoney,
+        })
+    },[totalList.data])
+
     return(
         <div className="ProductList">
             <div className="ProductListTop">
@@ -67,7 +66,7 @@ const ProductList =() =>{
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((item, index) => (
+                            {totalList.data.map((item, index) => (
                             <tr key={index}>
                                 <td>{item.status}</td>
                                 <td>{item.code}</td>
