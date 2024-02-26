@@ -30,7 +30,7 @@ const ProdInfo =() =>{
                     <p>{data.stock}</p>
                 </div>
                 <div>
-                    <p>신청 개수</p>
+                    <p>수령 일자</p>
                     <p>{data.receive_ct}</p>
                 </div>
             </div>

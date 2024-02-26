@@ -23,7 +23,7 @@ const ProductRes=()=>{
                 <p>{total - discountMoney}</p>
                 <p>0</p>
                 <p>0</p>
-                <p >0</p>
+                <p className="LastPTag">0</p>
             </div>
         </div>
     )

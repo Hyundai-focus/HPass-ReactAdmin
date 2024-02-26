@@ -45,3 +45,6 @@
     width: 80%;
     border-bottom: 1px solid grey;
 }
+.ProductRes .LastPTag{
+    border: none;
+}
