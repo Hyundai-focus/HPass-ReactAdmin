@@ -21,7 +21,7 @@ const ProductList =() =>{
     const { get } = useGet();
 
     const socket =useMemo(() => {
-        return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/coupon`);
+        return new WebSocket(`wss://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/coupon`);
     }, []); 
 
     socket.onmessage=(e)=>{

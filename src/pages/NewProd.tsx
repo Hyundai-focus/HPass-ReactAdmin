@@ -11,7 +11,7 @@ import usePost from "hooks/usePost"
 import useGet from "hooks/useGet";
 const NewProd = () => {    
     const socket =useMemo(() => {
-      return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/newProd`);
+      return new WebSocket(`wss://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/newProd`);
     }, []); 
     const [modal, setModal] = useState(false)
     const [falseModal, setFalseModal] = useState(false)
