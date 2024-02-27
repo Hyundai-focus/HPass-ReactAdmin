@@ -4,6 +4,7 @@ import Header from "components/Header";
 import BottomButtons from "components/Payment/BottomButtons";
 import ProductList from "components/Payment/ProductList"
 import ProductRes from "components/Payment/ProductRes"
+import MenuButtons from "components/Payment/MenuButtons";
 import styled from "styled-components"
 
 const Div = styled.div`
@@ -16,10 +17,13 @@ const Payment =()=>{
             <Header/>
             <SideBar props={"payment"}/>
             <div>
-            <ProductList/>
-            <BottomButtons/>
+                <ProductList/>
+                <BottomButtons/>
             </div>
-            <ProductRes/>
+            <div>
+                <MenuButtons/>
+                <ProductRes/>
+            </div>
         </Div>
     )
 }

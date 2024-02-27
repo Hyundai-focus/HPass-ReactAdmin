@@ -20,28 +20,45 @@
 }
 .TopBar p{
     line-height: 1.5rem;
+    border-right: 0.5px solid white;
+}
+.ProductList .Width10P{
+    width: 10%;
+}
+.ProductList .Width40P{
+    width: 40%;
+}
+.ProductList .Width15P{
+    width: 15%;
+}
+.ProductList .Width15P_last{
+    width: 15%;
+    border:none;
 }
 .ProductListTopOverflow{
     height: 88%;
     overflow-y: auto;
 }
-.ProductList table{
-    width: 97%;
-    margin-left: 1.5%;
-    font-size: 0.9rem;
-    border-collapse: collapse;
+.ProductListTopOverflow div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
-.ProductList tr{
-    height: 4rem;
+.ProductListTopOverflow .MenuInfo{
+    display: flex;
+    flex-direction: row;
     text-align: center;
+    font-weight: lighter;
+    font-size: 0.9rem;
+    height: 3.75rem;
 }
-.ProductList td {
-    border-bottom: 1px solid rgb(233, 233, 233);
-    padding: 10px;
-}
-.ProductList hr{
+.ProductListTopOverflow hr{
+    margin: 0;
+    height: 0rem;
+    width: 95%;
     border: none;
-    border-left: 0.25px solid rgb(116, 116, 116); 
+    border-top: 1px solid lightgray;
 }
 
 .TotalInfo{

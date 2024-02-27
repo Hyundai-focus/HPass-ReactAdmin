@@ -39,14 +39,14 @@ const BottomButtons = () =>{
     const coupon = useSelector((state : RootState) => state.couponName.couponId)
     const {post} = usePost()
     const addList =()=>{
-        const newItem = {
-            status: 'new',
-            code: '123',
-            name: 'Sample Item',
-            price: 1000,
-            quantity: 1,
-            total: 10000,
-        };
+        const newItem =         {
+            "status": "new",
+            "code": "26",
+            "name": "리바이리 콤부차 배리옴 마일드 포밍 클렌저",
+            "price": 24000,
+            "quantity": 1,
+            "total": 24000
+        }
         dispatch(addItem(newItem))
     }
 

@@ -1,0 +1,85 @@
+{
+    "items": [
+        [{
+            "status": "구매",
+            "code": "PR05",
+            "name": "핸드크림 기프트 세트",
+            "price": 25000,
+            "quantity": 1,
+            "total": 25000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/202308/28/c1c7435cd015d4ae5bc4b0db5f1f5608.jpg"
+        },
+        {
+            "status": "구매",
+            "code": "PR08",
+            "name": "핸드크림&워시 듀오",
+            "price": 50000,
+            "quantity": 1,
+            "total": 50000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/202308/28/9e2a7c0254ab245db3c54df3568a333b.jpg"
+        },
+        {
+            "status": "구매",
+            "code": "PR12",
+            "name": "콤부차 배리옴 인텐시브 크림",
+            "price": 48000,
+            "quantity": 1,
+            "total": 48000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/94ffdfb1d7886b83e5cee672dbc11318.jpg"
+        }],
+        [{
+            "status": "구매",
+            "code": "PR13",
+            "name": "소듐 미네랄 앰플",
+            "price": 35000,
+            "quantity": 1,
+            "total": 35000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/201908/27/9b442dd26078a6e484a9c6f2cce903a0.jpg"
+        },
+        {
+            "status": "구매",
+            "code": "PR19",
+            "name": "콤부차 배리옴 마일드 포밍 클렌저",
+            "price": 24000,
+            "quantity": 1,
+            "total": 24000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/6d01008cb8fb554b26e73dd6733a6ecf.jpg"
+        },
+        {
+            "status": "구매",
+            "code": "PR37",
+            "name": "콤부차 배리옴 에센스 토너",
+            "price": 32000,
+            "quantity": 1,
+            "total": 32000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/984ffaa10c17f95b95baddacb5dc4017.jpg"
+        }],
+        [{
+            "status": "구매",
+            "code": "PR43",
+            "name": "콤부차 배리옴 래디언스 앰플",
+            "price": 36000,
+            "quantity": 1,
+            "total": 36000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/79aaac8f106bacdfa0afe6c2e09ce93c.jpg"
+        },
+        {
+            "status": "구매",
+            "code": "PR52",
+            "name": "플랜티어리 UV 컷 마일드 선크림",
+            "price": 35000,
+            "quantity": 1,
+            "total": 35000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/202007/31/08ae5dfb39240e88bc43c1fae6327360.jpg"
+        },
+        {
+            "status": "구매",
+            "code": "PR56",
+            "name": "콤부차 배리옴 릴리프 마스크 1매",
+            "price": 6000,
+            "quantity": 1,
+            "total": 6000,
+            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/9146dfae7d1a41ba033e00893a752c87.jpg"
+        }]
+    ]
+}
