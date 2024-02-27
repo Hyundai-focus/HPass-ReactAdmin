@@ -22,17 +22,13 @@ const Login = () => {
                 userId: login.email,
                 password: login.password,
             });
-            console.log(res)
             if(res.role === 'ROLE_POS') {
-                //setCookie("token", res.accessToken)
                 setCookie("token", res.accessToken);
-                console.log(cookies)
                 navigate('/payment')
             }
             else navigate('/invalid')
         }
         catch(e){
-            console.log(e)
             return
         }
 

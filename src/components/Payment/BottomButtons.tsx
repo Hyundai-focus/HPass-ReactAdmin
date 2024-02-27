@@ -4,7 +4,11 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import { addItem, removeItem } from "store/reducer/paymentList";
 import { setCoupon } from "store/reducer/couponMoney";
+import { setCouponId } from "store/reducer/couponMoney";
 import { setTotalMoney } from "store/reducer/totalMoney";
+import { useSelector } from 'react-redux';
+import { RootState } from "store/store";
+import usePost from "hooks/usePost";
 
 const Button = styled.button`
     background-color: var(--black);
@@ -31,8 +35,9 @@ const Div = styled.div`
     margin-top:0.5rem;
 `
 const BottomButtons = () =>{
-    const dispatch = useDispatch();
-    
+    const dispatch = useDispatch()
+    const coupon = useSelector((state : RootState) => state.couponName.couponId)
+    const {post} = usePost()
     const addList =()=>{
         const newItem = {
             status: 'new',
@@ -46,7 +51,15 @@ const BottomButtons = () =>{
     }
 
     const clickPay =()=> {
+        const setCouponTrue =async()=>{
+            try{
+                await post(`${process.env.REACT_APP_API_URL}/pos/coupon/use`, {storeName : `${coupon}`})
+            }
+            catch(e){return}
+        }
+        if(coupon !== -1) setCouponTrue()
         dispatch(removeItem())
+        dispatch(setCouponId(-1))
         dispatch(setCoupon("0")) 
         dispatch(setTotalMoney(0))
     }

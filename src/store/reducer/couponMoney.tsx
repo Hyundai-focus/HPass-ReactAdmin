@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CouponState {
     coupon: string;
+    couponId : number;
 }
 
 const initialState:CouponState = {
-    coupon: ""
+    coupon: "",
+    couponId: 0,
 };
 
 const dataSlice = createSlice({
@@ -14,10 +16,13 @@ const dataSlice = createSlice({
     reducers: {
         setCoupon(state, action:PayloadAction<string>){
             state.coupon = action.payload
+        },
+        setCouponId(state, action:PayloadAction<number>){
+            state.couponId = action.payload
         }
     },
   });
 
-export const { setCoupon } = dataSlice.actions;
+export const { setCoupon,setCouponId } = dataSlice.actions;
 
 export default dataSlice.reducer;

@@ -2,7 +2,7 @@ import React,{useEffect, useMemo,useState} from "react"
 import 'css/Payment/ProductList.css'
 import CouponModal from "components/Modal/CouponModal"
 import { useDispatch } from 'react-redux'
-import { setCoupon } from "store/reducer/couponMoney"
+import { setCoupon, setCouponId } from "store/reducer/couponMoney"
 import { useSelector } from 'react-redux';
 import { RootState } from "store/store";
 import { setTotalMoney } from "store/reducer/totalMoney"
@@ -25,11 +25,9 @@ const ProductList =() =>{
     }, []); 
 
     socket.onmessage=(e)=>{
-        console.log(e.data)
         const getCouponList= async() =>{
             try{
                 const res = await get(`${process.env.REACT_APP_API_URL}/pos/coupon/list/${e.data}`);
-                console.log(res)
                 const dataWithIds = res.map((item, index) => ({
                     ...item,
                     id: index + 1
@@ -37,7 +35,6 @@ const ProductList =() =>{
                 setData(dataWithIds);
             }
             catch(e){
-                console.log(e)
                 return
             }
         }
@@ -126,6 +123,7 @@ const ProductList =() =>{
                 onClose={(coupon) => {
                     if(coupon.status === '할인'){
                         dispatch(addItem(coupon))
+                        dispatch(setCouponId(coupon.code.slice(2)))
                         dispatch(setCoupon(coupon.name))
                     }
                     setModal(false)}}
