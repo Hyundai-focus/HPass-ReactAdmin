@@ -13,6 +13,7 @@ const ProdList=({props})=>{
               }catch(e){return}
           }
           getStatus()
+          // eslint-disable-next-line
     },[])
     return(
         <div className="ProdList">

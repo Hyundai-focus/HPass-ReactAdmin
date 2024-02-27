@@ -25,6 +25,7 @@ const ProdGraph=({props})=>{
               }catch(e){return}
           }
           getStatus()
+          // eslint-disable-next-line
     },[])
     return(
         <div className="ProdGraph">
