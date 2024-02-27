@@ -1,0 +1,62 @@
+.ProdGraph{
+    background-color: white;
+    margin-left: 2.5vw;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 25rem;
+}
+.ProdGraph .chartTop{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
+.ProdGraph .colorChart{
+    margin-top: 1rem;
+    width: 40%;
+}
+.ProdGraph .MiniDiv{
+    display: flex;
+    margin-bottom: 0.5rem;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 0.5rem;
+}
+.ProdGraph .MiniDiv p{
+    margin: 0px;
+    width: auto;
+    text-align: end;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: grey;
+}
+.ProdGraph .MiniDiv div{
+    border-radius:1rem;
+    width: 0.85rem;
+    height:0.75rem;
+    padding-top: 0.1rem ;
+}
+.ProdGraph .AllRound{
+    background-color: #cbcbcb;
+}
+.ProdGraph .takeRound{
+    background-color: #B0E1D0;
+}
+.Chart{
+    width: 100%;
+    height: 100%;
+    margin-left: -12.5%;
+    margin-top: 5%;
+    font-size: 0.75rem;
+}
+.ProdGraph p{
+    width: 50%;
+    font-size: 1.5rem;
+    margin: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 1rem;
+    margin-top: 2rem;
+}

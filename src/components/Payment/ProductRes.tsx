@@ -5,8 +5,8 @@ import { RootState } from "store/store";
 const ProductRes=()=>{
     const totalMoney = useSelector((state : RootState) => state.totalMoney);
     const total = Number(totalMoney.total)
-    const coupon = useSelector((state : RootState) => state.couponName);
-    const discountMoney = total * Number(coupon.coupon.split("%")[0].slice(-2)) / 100
+    const coupon = useSelector((state : RootState) => state.couponName.coupon);
+    const discountMoney = total * Number(coupon.split("%")[0].slice(-2)) / 100
     return(
         <div className="ProductRes">
             <div className="ProductResLeft">
@@ -23,7 +23,7 @@ const ProductRes=()=>{
                 <p>{total - discountMoney}</p>
                 <p>0</p>
                 <p>0</p>
-                <p >0</p>
+                <p className="LastPTag">0</p>
             </div>
         </div>
     )

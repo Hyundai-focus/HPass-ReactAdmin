@@ -6,26 +6,29 @@ import { FiUser } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import usePost from "hooks/usePost";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const Login = () => {
     const { post } = usePost();
     const navigate = useNavigate();
-    const apiUrl = process.env.REACT_APP_API_URL;
+    const [cookies, setCookie] = useCookies(["token"]);
     const [login, setLogin] = useState({
         email: "",
         password: "",
       });
     const tryLogin= async() =>{
         try{
-            const res = await post(`${apiUrl}/login`, {
+            const res = await post(`${process.env.REACT_APP_API_URL}/login`, {
                 userId: login.email,
                 password: login.password,
             });
-            if(res.role !== 'ROLE_POS') navigate('/invalid')
-            else navigate('/payment')
+            if(res.role === 'ROLE_POS') {
+                setCookie("token", res.accessToken);
+                navigate('/payment')
+            }
+            else navigate('/invalid')
         }
         catch(e){
-            console.log(e)
             return
         }
 

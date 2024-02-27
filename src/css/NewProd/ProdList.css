@@ -1,0 +1,55 @@
+.ProdList{
+    background-color: white;
+    width: 47%;
+    margin-left: 2.5vw;
+    max-height: 25rem;
+}
+.ProdList .topBar{
+    height: 2.25rem;
+    width: 100%x;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ProdList .topBar p{
+    color: white;
+    margin: 0px;
+    font-size: 0.8rem;
+    height: 1rem;
+    text-align: center;
+    border-right: 1px solid white;
+}
+.ProdList .topBar .ProdStatus{
+    border-right: none;
+}
+.ProdList .ProdNum{
+    width: 20%;
+}
+.ProdList .ProdPerson{
+    width: 40%;
+}
+.ProdList .ProdDate{
+    width: 20%;
+}
+.ProdList .ProdStatus{
+    width: 20%;
+}
+.ProdList .bottomList{
+    overflow-y: auto;
+    max-height: 22rem;
+    width: 100%;
+}
+.ProdList .bottomList .bottomListItem{
+    display: flex;
+    flex-direction: row;
+}
+.ProdList .bottomList p{
+    text-align: center;
+    font-size: 0.8rem;
+}
+.ProdList .bottomList hr{
+    width: 92.5%;
+    border:none;
+    border-top: 1px solid lightgray;
+}

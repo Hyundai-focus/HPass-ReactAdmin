@@ -134,3 +134,10 @@
       display: none; /* 애니메이션이 끝난 후에는 화면에서 사라짐 */
     }
   }
+  .Modal .noListButton{
+  margin-top: 45%;
+  }
+
+  .Modal .NoListP{
+    margin-top: 55%;
+    }

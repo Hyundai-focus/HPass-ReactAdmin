@@ -1,9 +1,14 @@
 
-import React,{useMemo} from "react";
+import React from "react";
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
+import { addItem, removeItem } from "store/reducer/paymentList";
 import { setCoupon } from "store/reducer/couponMoney";
+import { setCouponId } from "store/reducer/couponMoney";
 import { setTotalMoney } from "store/reducer/totalMoney";
+import { useSelector } from 'react-redux';
+import { RootState } from "store/store";
+import usePost from "hooks/usePost";
 
 const Button = styled.button`
     background-color: var(--black);
@@ -30,12 +35,31 @@ const Div = styled.div`
     margin-top:0.5rem;
 `
 const BottomButtons = () =>{
-    const dispatch = useDispatch();
-    const socket =useMemo(() => {
-        return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/controller`);
-    }, []); 
+    const dispatch = useDispatch()
+    const coupon = useSelector((state : RootState) => state.couponName.couponId)
+    const {post} = usePost()
+    const addList =()=>{
+        const newItem = {
+            status: 'new',
+            code: '123',
+            name: 'Sample Item',
+            price: 1000,
+            quantity: 1,
+            total: 10000,
+        };
+        dispatch(addItem(newItem))
+    }
+
     const clickPay =()=> {
-        socket.send(`addProduct:: []`);
+        const setCouponTrue =async()=>{
+            try{
+                await post(`${process.env.REACT_APP_API_URL}/pos/coupon/use`, {storeName : `${coupon}`})
+            }
+            catch(e){return}
+        }
+        if(coupon !== -1) setCouponTrue()
+        dispatch(removeItem())
+        dispatch(setCouponId(-1))
         dispatch(setCoupon("0")) 
         dispatch(setTotalMoney(0))
     }
@@ -47,7 +71,7 @@ const BottomButtons = () =>{
                 <Button>게시/마감</Button>
             </ButtonDiv>
             <ButtonDiv>
-                <Button>영수증재출력</Button>
+                <Button onClick={addList}>영수증재출력</Button>
                 <Button>영수증조회</Button>
                 <Button>현금영수증</Button>
             </ButtonDiv>
