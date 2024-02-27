@@ -11,6 +11,7 @@ import { useCookies } from "react-cookie";
 const Login = () => {
     const { post } = usePost();
     const navigate = useNavigate();
+    // eslint-disable-next-line
     const [cookies, setCookie] = useCookies(["token"]);
     const [login, setLogin] = useState({
         email: "",
