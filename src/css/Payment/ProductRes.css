@@ -3,7 +3,8 @@
     flex-direction:row;
     width:25vw;
     margin-left:1.25vw;
-    margin-top:40vh;
+    margin-top: 0.5rem;
+    height: 46.85vh;
 }
 
 .ProductResLeft{
