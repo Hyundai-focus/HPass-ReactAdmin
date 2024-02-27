@@ -12,20 +12,21 @@ const Login = () => {
     const { post } = usePost();
     const navigate = useNavigate();
     const [cookies, setCookie] = useCookies(["token"]);
-    const apiUrl = process.env.REACT_APP_API_URL;
     const [login, setLogin] = useState({
         email: "",
         password: "",
       });
     const tryLogin= async() =>{
         try{
-            const res = await post(`${apiUrl}/login`, {
+            const res = await post(`${process.env.REACT_APP_API_URL}/login`, {
                 userId: login.email,
                 password: login.password,
             });
             console.log(res)
             if(res.role === 'ROLE_POS') {
-                setCookie("token", res.accessToken)
+                //setCookie("token", res.accessToken)
+                setCookie("token", res.accessToken);
+                console.log(cookies)
                 navigate('/payment')
             }
             else navigate('/invalid')

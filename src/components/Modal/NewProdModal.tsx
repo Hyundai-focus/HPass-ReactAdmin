@@ -1,11 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import 'css/Modal/CouponModal.css'
 import 'css/Modal/NewProdModal.css'
-const NewProdModal = ({onClose}) => {
+import useGet from "hooks/useGet";
+const NewProdModal = ({props, onClose, memberNo}) => {
   const modalRef = useRef(null);
- 
-  const closeModal = () => {
+  const { get } = useGet();
+
+  const closeModal = (status:boolean) => {
+    const getProdList= async() =>{
+      try{
+          await get(`${process.env.REACT_APP_API_URL}/pos/product/new/history/${memberNo}`);
+        }catch(e){return}
+    }
     if (modalRef.current) {
+      if(status) getProdList()
       modalRef.current.classList.add("modalFadeOut");
       setTimeout(() => {
         onClose()
@@ -16,34 +24,26 @@ const NewProdModal = ({onClose}) => {
   useEffect(() => {
     modalRef.current.classList.add("modalFadeIn");
   }, []);
-  const data={
-    product_history_no:1,
-    product_img:"https://images-prod.dazeddigital.com/900/azure/dazed-prod/1360/0/1360573.jpg",
-    product_name:"리바이리 소듐 미네랄 엠플",
-    product_brand:"Re X Re",
-    member_name:"반 * 현"
-    
-}
   return (
     <div className="modalOverlay">
       <div className="Modal" ref={modalRef}>
         <div className="ProdModal">
             <div className="imgContainer">
-                <img alt="img" src={data.product_img}/>
+                <img alt="img" src={props.prodImg}/>
             </div>
             <div className="modalProdName">
-                <p className="ProdBrand">{data.product_brand}</p>
-                <p className="ProdName">{data.product_name}</p>
+                <p className="ProdBrand">{props.prodBrand}</p>
+                <p className="ProdName">{props.prodName}</p>
             </div>
             <div className="modalmemberInfo">
                 <p className="memberNoTag">신청자</p>
-                <p className="memberName">{data.member_name}</p>
+                <p className="memberName">{props.memberName}</p>
             </div>
             
         </div>
         <div className="buttonDiv">
-            <button onClick={closeModal} className="closeButtonProd">닫기</button>
-            <button onClick={closeModal}>수령 확인</button>
+            <button onClick={() => closeModal(false)} className="closeButtonProd">닫기</button>
+            <button onClick={() => closeModal(true)}>수령 확인</button>
         </div>
       </div>
     </div>

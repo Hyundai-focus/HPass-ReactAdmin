@@ -1,7 +1,8 @@
 
-import React,{useMemo} from "react";
+import React from "react";
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
+import { addItem, removeItem } from "store/reducer/paymentList";
 import { setCoupon } from "store/reducer/couponMoney";
 import { setTotalMoney } from "store/reducer/totalMoney";
 
@@ -31,11 +32,21 @@ const Div = styled.div`
 `
 const BottomButtons = () =>{
     const dispatch = useDispatch();
-    const socket =useMemo(() => {
-        return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/controller`);
-    }, []); 
+    
+    const addList =()=>{
+        const newItem = {
+            status: 'new',
+            code: '123',
+            name: 'Sample Item',
+            price: 1000,
+            quantity: 1,
+            total: 10000,
+        };
+        dispatch(addItem(newItem))
+    }
+
     const clickPay =()=> {
-        socket.send(`addProduct:: []`);
+        dispatch(removeItem())
         dispatch(setCoupon("0")) 
         dispatch(setTotalMoney(0))
     }
@@ -47,7 +58,7 @@ const BottomButtons = () =>{
                 <Button>게시/마감</Button>
             </ButtonDiv>
             <ButtonDiv>
-                <Button>영수증재출력</Button>
+                <Button onClick={addList}>영수증재출력</Button>
                 <Button>영수증조회</Button>
                 <Button>현금영수증</Button>
             </ButtonDiv>

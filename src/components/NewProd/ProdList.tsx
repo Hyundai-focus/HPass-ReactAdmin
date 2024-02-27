@@ -1,53 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "css/NewProd/ProdList.css"
-const ProdList=()=>{
-    const data=[
-        {
-            product_history_no:1,
-            member_name:"김*김",
-            product_history_dt:"24.02.03",
-            product_status:"수령"
-        }
-        ,
+import useGet from "hooks/useGet"
 
-        {
-            product_history_no:1,
-            member_name:"김*김",
-            product_history_dt:"24.02.03",
-            product_status:"수령"
-        }
-        ,
-        {
-            product_history_no:1,
-            member_name:"김*김",
-            product_history_dt:"24.02.03",
-            product_status:"수령"
-        },
-        {
-            product_history_no:1,
-            member_name:"김*김",
-            product_history_dt:"24.02.03",
-            product_status:"수령"
-        },
-        {
-            product_history_no:1,
-            member_name:"김*김",
-            product_history_dt:"24.02.03",
-            product_status:"수령"
-        },
-        {
-            product_history_no:1,
-            member_name:"김*김",
-            product_history_dt:"24.02.03",
-            product_status:"수령"
-        },
-        {
-            product_history_no:1,
-            member_name:"김*김",
-            product_history_dt:"24.02.03",
-            product_status:"수령"
-        },
-    ]
+const ProdList=({props})=>{
+    const { get } = useGet();
+    const [data,setData] = useState([ ])
+    useEffect(()=>{
+        const getStatus = async() =>{
+            try{
+                const res = await get(`${process.env.REACT_APP_API_URL}/pos/product/new/list/${props}`);
+                setData(res)
+              }catch(e){return}
+          }
+          getStatus()
+    },[])
     return(
         <div className="ProdList">
             <div className="topBar">
@@ -60,10 +26,10 @@ const ProdList=()=>{
             {data.map((item, index) => (
                 <div key={index}>
                 <div className="bottomListItem" >
-                    <p className="ProdNum">pu{item.product_history_no}</p>
-                    <p className="ProdPerson">{item.member_name}</p>
-                    <p className="ProdDate">{item.product_history_dt}</p>
-                    <p className="ProdStatus">{item.product_status}</p>
+                    <p className="ProdNum">pu{item.productHistoryNo}</p>
+                    <p className="ProdPerson">{item.memberName}</p>
+                    <p className="ProdDate">{item.historyDate}</p>
+                    <p className="ProdStatus">{item.productStatus}</p>
                 </div>
                 <hr/>
                 </div>

@@ -59,6 +59,12 @@ const Control=()=>{
             socket.send(`coupon::coupon`);
         }
     }
+
+    const newProd=()=>{
+        if (socket.readyState === WebSocket.OPEN) { //소켓이 열려 있으면 전송
+            socket.send(`member::21`);
+        }
+    }
     return(
         <Div>
             <Button onClick={addData}>
@@ -66,6 +72,9 @@ const Control=()=>{
             </Button>
             <Button onClick={coupon}>
                 쿠폰 모달창 열기
+            </Button>
+            <Button onClick={newProd}>
+                신제품 수령
             </Button>
         </Div>
     )
