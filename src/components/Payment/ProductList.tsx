@@ -21,15 +21,20 @@ const ProductList =() =>{
     const { get } = useGet();
 
     const socket =useMemo(() => {
-        return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/getAddProduct`);
+        return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/coupon`);
     }, []); 
 
     socket.onmessage=(e)=>{
         console.log(e.data)
         const getCouponList= async() =>{
             try{
-                const res = await get(`${process.env.REACT_APP_API_URL}/pos/product/new/1`);
+                const res = await get(`${process.env.REACT_APP_API_URL}/pos/coupon/list/${e.data}`);
                 console.log(res)
+                const dataWithIds = res.map((item, index) => ({
+                    ...item,
+                    id: index + 1
+                }));
+                setData(dataWithIds);
             }
             catch(e){
                 console.log(e)
@@ -116,9 +121,12 @@ const ProductList =() =>{
                 </div>
             </div>
             {modal&& <CouponModal 
+                props={data}
                 onClose={(coupon) => {
-                    dispatch(addItem(coupon))
-                    dispatch(setCoupon(coupon.name))
+                    if(coupon.status === '할인'){
+                        dispatch(addItem(coupon))
+                        dispatch(setCoupon(coupon.name))
+                    }
                     setModal(false)}}
             />}
         </div>

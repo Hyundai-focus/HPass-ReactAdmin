@@ -16,7 +16,6 @@ const ProdGraph=({props})=>{
         const getStatus = async() =>{
             try{
                 const res = await get(`${process.env.REACT_APP_API_URL}/pos/product/new/status/${props}`);
-                console.log(res)
                 const transformedData = res.map((item) => ({
                     "날짜": item.historyDate,
                     "전체": item.notReceive + item.receive,

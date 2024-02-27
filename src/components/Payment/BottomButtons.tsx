@@ -1,5 +1,5 @@
 
-import React,{useMemo} from "react";
+import React from "react";
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import { addItem, removeItem } from "store/reducer/paymentList";
@@ -32,9 +32,6 @@ const Div = styled.div`
 `
 const BottomButtons = () =>{
     const dispatch = useDispatch();
-    const socket =useMemo(() => {
-        return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/controller`);
-    }, []); 
     
     const addList =()=>{
         const newItem = {
@@ -49,7 +46,6 @@ const BottomButtons = () =>{
     }
 
     const clickPay =()=> {
-        socket.send(`addProduct:: []`); 
         dispatch(removeItem())
         dispatch(setCoupon("0")) 
         dispatch(setTotalMoney(0))

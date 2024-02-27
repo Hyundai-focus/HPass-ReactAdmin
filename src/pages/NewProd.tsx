@@ -32,6 +32,17 @@ const NewProd = () => {
       // eslint-disable-next-line
     }, []);
 
+    useEffect(() => {
+      socket.onopen = (event) => {
+        console.log("WebSocket connection opened:", event);
+      };
+      return () => {
+        socket.onclose = function (event) {
+          console.log("WebSocket connection closed:", event);
+        };
+      };
+    }, [socket]);
+
     socket.onmessage=(e)=>{
       console.log(e.data)
       setmemberNo(e.data)
