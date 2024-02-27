@@ -44,7 +44,6 @@ const NewProd = () => {
     }, [socket]);
 
     socket.onmessage=(e)=>{
-      console.log(e.data)
       setmemberNo(e.data)
       const getUserHistory= async() =>{
           try{

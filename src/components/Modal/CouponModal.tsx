@@ -14,8 +14,9 @@ const CouponModal = ({props, onClose}) => {
     if (modalRef.current) {
       modalRef.current.classList.add("modalFadeOut");
       setTimeout(() => {
-        if(selectedCoupon.id === -1)onClose({})
+        if(selectedCoupon.id === -1) onClose({})
         else onClose({
+          id : selectedCoupon.couponHistoryNo,
           status: '할인',
           code: 'SL' + selectedCoupon.couponHistoryNo,
           name: selectedCoupon.couponBrand + " " + selectedCoupon.couponContent,
