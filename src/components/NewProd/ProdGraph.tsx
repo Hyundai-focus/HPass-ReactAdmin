@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "css/NewProd/ProdGraph.css"
+import useGet from "hooks/useGet"
 import { AreaChart, XAxis,YAxis, CartesianGrid, Tooltip, Area, ResponsiveContainer } from "recharts";
 
-const ProdGraph=()=>{
-    const data = [
-        { name: '02.23', uv: 4, pv: 13 },
-        { name: '02.24', uv: 1, pv: 10 },
-        { name: '02.25', uv: 5, pv: 10 },
-        { name: '02.26', uv: 1, pv: 5 },
-        { name: '02.27', uv: 2, pv: 3 },
-    ];
+const ProdGraph=({props})=>{
+    const { get } = useGet();
+    const [data,setData] = useState([
+        {
+            "날짜":"",
+            "전체:":0,
+            "수령":0
+        }
+    ])
+    useEffect(()=>{
+        const getStatus = async() =>{
+            try{
+                const res = await get(`${process.env.REACT_APP_API_URL}/pos/product/new/status/${props}`);
+                console.log(res)
+                const transformedData = res.map((item) => ({
+                    "날짜": item.historyDate,
+                    "전체": item.notReceive + item.receive,
+                    "수령": item.receive
+                  }));
+                setData(transformedData)
+              }catch(e){return}
+          }
+          getStatus()
+    },[])
     return(
         <div className="ProdGraph">
             <div className="chartTop">
@@ -39,12 +56,12 @@ const ProdGraph=()=>{
                         <stop offset="95%" stopColor="#cbcbcb" stopOpacity={0}/>
                         </linearGradient>
                     </defs>
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="날짜" />
                     <YAxis />
                     <CartesianGrid strokeDasharray="3 3" />
                     <Tooltip />
-                    <Area type="monotone" dataKey="uv" stroke="#B0E1D0" fillOpacity={1} fill="url(#colorUv)" />
-                    <Area type="monotone" dataKey="pv" stroke="#cbcbcb" fillOpacity={1} fill="url(#colorPv)" />
+                    <Area type="monotone" dataKey="전체" stroke="#B0E1D0" fillOpacity={1} fill="url(#colorUv)" />
+                    <Area type="monotone" dataKey="수령" stroke="#cbcbcb" fillOpacity={1} fill="url(#colorPv)" />
                 </AreaChart>
             </ResponsiveContainer>
             </div>

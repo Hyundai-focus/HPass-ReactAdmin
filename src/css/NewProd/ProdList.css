@@ -2,6 +2,7 @@
     background-color: white;
     width: 47%;
     margin-left: 2.5vw;
+    max-height: 25rem;
 }
 .ProdList .topBar{
     height: 2.25rem;
@@ -36,7 +37,7 @@
 }
 .ProdList .bottomList{
     overflow-y: auto;
-    max-height: 25vw;
+    max-height: 22rem;
     width: 100%;
 }
 .ProdList .bottomList .bottomListItem{

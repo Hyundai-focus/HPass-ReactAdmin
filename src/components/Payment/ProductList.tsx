@@ -6,6 +6,9 @@ import { setCoupon } from "store/reducer/couponMoney"
 import { useSelector } from 'react-redux';
 import { RootState } from "store/store";
 import { setTotalMoney } from "store/reducer/totalMoney"
+import { addItem } from "store/reducer/paymentList"
+import useGet from "hooks/useGet"
+
 const ProductList =() =>{
     const totalList = useSelector((state : RootState) => state.paymentList);
     const dispatch = useDispatch();
@@ -15,6 +18,7 @@ const ProductList =() =>{
         cnt : 0,
         money: 0
     })
+    const { get } = useGet();
 
     const socket =useMemo(() => {
         return new WebSocket(`ws://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/getAddProduct`);
@@ -22,13 +26,27 @@ const ProductList =() =>{
 
     socket.onmessage=(e)=>{
         console.log(e.data)
+        const getCouponList= async() =>{
+            try{
+                const res = await get(`${process.env.REACT_APP_API_URL}/pos/product/new/1`);
+                console.log(res)
+            }
+            catch(e){
+                console.log(e)
+                return
+            }
+        }
+        getCouponList()
+        setModal(true)
     }
     useEffect(()=>{
         let calCnt = 0
         let calMoney = 0
         totalList.data.forEach((item) =>{
-            calCnt += item.quantity
-            calMoney += item.total
+            if(item.code.slice(0,2) !=='SL'){
+                calCnt += item.quantity
+                calMoney += item.total
+            }
         })
         dispatch(setTotalMoney(calMoney))
         setTotal({
@@ -99,7 +117,7 @@ const ProductList =() =>{
             </div>
             {modal&& <CouponModal 
                 onClose={(coupon) => {
-                    setData((prev) => [...prev, coupon]);
+                    dispatch(addItem(coupon))
                     dispatch(setCoupon(coupon.name))
                     setModal(false)}}
             />}

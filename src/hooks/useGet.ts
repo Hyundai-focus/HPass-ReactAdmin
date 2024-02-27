@@ -8,11 +8,11 @@ const useGet = () => {
       const response = await axios.get(url, {
         params: queryParams,
         withCredentials: true,
-        headers: { Authorizatoin: cookies.token },
+        headers: { Authorization:cookies.token},
       });
       return response.data;
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error:", error.response);
       throw new Error("Failed to fetch data");
     }
   };
