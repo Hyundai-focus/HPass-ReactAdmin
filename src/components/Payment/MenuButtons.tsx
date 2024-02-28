@@ -12,7 +12,7 @@ const MenuButtons=()=>{
             {item.items.map((data, idx)=>(
                 <div key={idx} className="MenuButtonOut">
                     {data.map((dt, index)=>(
-                        <button onClick={()=>{ dispatch(addItem(dt))}}>
+                        <button key={index} onClick={()=>{ dispatch(addItem(dt))}}>
                             <div className="MenuButtonIn">
                                 <img alt="img" src={dt.img}/>
                                 <div className="overlay"></div>
