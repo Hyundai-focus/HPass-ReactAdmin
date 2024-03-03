@@ -40,8 +40,8 @@ const ProductList =() =>{
     socket.onmessage=(e)=>{
         const getCouponList= async() =>{
             try{
-                const res = await get(`${process.env.REACT_APP_API_URL}/pos/coupon/list/${Number(e.data)}`);
-                if(res.length === 0) setFalseModal(true)
+                const res = await get(`${process.env.REACT_APP_API_URL}/pos/coupon/list/${e.data}`);
+                if(res.length() === 0) setFalseModal(true)
                 else{
                     const dataWithIds = res.map((item, index) => ({
                         ...item,
@@ -51,9 +51,7 @@ const ProductList =() =>{
                     setModal(true)
                 }
             }
-            catch(e){
-                return
-            }
+            catch(e){return}
         }
         getCouponList()
     }
@@ -114,8 +112,8 @@ const ProductList =() =>{
                 </div>
                 <hr/>
                 <div>
-                    <p id="leftP">총 판매 수량</p>
-                    <p id="rightP">{total.money}</p>
+                    <p id="leftP">총 판매 금액</p>
+                    <p id="rightP">{total.money.toLocaleString()}</p>
                 </div>
             </div>
             {falseModal && <NoListModal onClose={() => {setFalseModal(false)}}/>}

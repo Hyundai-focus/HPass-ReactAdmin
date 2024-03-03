@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import item from 'assets/item.json'
 
 const MenuButtons=()=>{
-    console.log(item.items)
     const dispatch = useDispatch()
     return(
         <div className="MenuButtons">
