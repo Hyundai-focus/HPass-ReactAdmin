@@ -22,3 +22,15 @@ body {
     overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+    width: 5px
+}
+::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background:rgba(0, 0, 0, 0.25); /* 스크롤바 핸들의 색상 */
+  }
+  
