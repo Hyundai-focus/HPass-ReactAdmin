@@ -37,7 +37,10 @@ const NewProdModal = ({props, onClose, memberNo}) => {
             </div>
             <div className="modalmemberInfo">
                 <p className="memberNoTag">신청자</p>
-                <p className="memberName">{props.memberName}</p>
+                <p className="memberName">{
+                props.memberName.length > 2 ?
+                props.memberName[0] + "*" + props.memberName[2]
+              : props.memberName[0] + "*"}</p>
             </div>
             
         </div>

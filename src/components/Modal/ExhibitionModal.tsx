@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import 'css/Modal/CouponModal.css'
-const CouponModal = ({props, onClose}) => {
+
+const ExhibitionModal = ({props, onClose}) => {
   const modalRef = useRef(null);
   const [selectedCoupon, setSelectedCoupon] = useState({        
     id : -1,
@@ -17,12 +18,7 @@ const CouponModal = ({props, onClose}) => {
         if(selectedCoupon.id === -1) onClose({})
         else onClose({
           id : selectedCoupon.couponHistoryNo,
-          status: '할인',
-          code: 'SL' + selectedCoupon.couponHistoryNo,
-          name: selectedCoupon.couponBrand + " " + selectedCoupon.couponContent,
-          price: '-',
-          quantity: 1,
-          total: '-'});
+          name: selectedCoupon.couponBrand + " " + selectedCoupon.couponContent});
       }, 500); // 페이드아웃 애니메이션(0.5초) 후 onClose() 호출
     }
   };
@@ -58,4 +54,4 @@ const CouponModal = ({props, onClose}) => {
   );
 };
 
-export default CouponModal;
+export default ExhibitionModal;
