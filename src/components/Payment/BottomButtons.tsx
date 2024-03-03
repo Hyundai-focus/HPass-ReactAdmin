@@ -2,7 +2,7 @@
 import React from "react";
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
-import { addItem, removeItem } from "store/reducer/paymentList";
+import { removeItem } from "store/reducer/paymentList";
 import { setCoupon } from "store/reducer/couponMoney";
 import { setCouponId } from "store/reducer/couponMoney";
 import { setTotalMoney } from "store/reducer/totalMoney";
@@ -38,18 +38,6 @@ const BottomButtons = () =>{
     const dispatch = useDispatch()
     const coupon = useSelector((state : RootState) => state.couponName.couponId)
     const {post} = usePost()
-    const addList =()=>{
-        const newItem =         {
-            "status": "new",
-            "code": "26",
-            "name": "리바이리 콤부차 배리옴 마일드 포밍 클렌저",
-            "price": 24000,
-            "quantity": 1,
-            "total": 24000
-        }
-        dispatch(addItem(newItem))
-    }
-
     const clickPay =()=> {
         const setCouponTrue =async()=>{
             try{
@@ -71,7 +59,7 @@ const BottomButtons = () =>{
                 <Button>게시/마감</Button>
             </ButtonDiv>
             <ButtonDiv>
-                <Button onClick={addList}>영수증재출력</Button>
+                <Button>영수증재출력</Button>
                 <Button>영수증조회</Button>
                 <Button>현금영수증</Button>
             </ButtonDiv>

@@ -7,7 +7,6 @@ import ProdList from "components/NewProd/ProdList";
 import NewProdModal from "components/Modal/NewProdModal";
 import NoListModal from "components/Modal/NoListModal";
 import "css/NewProd/NewProd.css"
-import usePost from "hooks/usePost"
 import useGet from "hooks/useGet";
 const NewProd = () => {    
     const socket =useMemo(() => {
@@ -18,13 +17,12 @@ const NewProd = () => {
     const [memberNo, setmemberNo] = useState(0)
     const [modalData, setModalData] = useState({})
     const [prodData, setProdData] = useState([])
-    const { post } = usePost();
     const { get } = useGet();
 
     useEffect(() => {
       const getProdList= async() =>{
         try{
-            const res = await post(`${process.env.REACT_APP_API_URL}/pos/product/new`,{"storeName":"더현대 서울 1F 컨시어지"});
+            const res = await get(`${process.env.REACT_APP_API_URL}/pos/product/new/0`);
             setProdData(res)
           }catch(e){return}
       }
@@ -64,14 +62,15 @@ const NewProd = () => {
             <Header/>
             <SideBar props={"product"}/>
             <div className="newProdBody">
-            {prodData.map((item,index)=>{
-              return(
-              <div className="ProdBody" key={index}>
-                <ProdInfo props={item}/>
-                <ProdGraph props={item.prodNo}/>
-                <ProdList props={item.prodNo}/>
-              </div>)
-            })}
+              <div style={{height:"80px"}}></div>
+              {prodData.map((item,index)=>{
+                return(
+                <div className="ProdBody" key={index}>
+                  <ProdInfo props={item}/>
+                  <ProdGraph props={item.prodNo}/>
+                  <ProdList props={item.prodNo}/>
+                </div>)
+              })}
             </div>
             {modal && <NewProdModal props={modalData} onClose={() => {setModal(false)}} memberNo={memberNo}/>}
             {falseModal && <NoListModal onClose={() => {setFalseModal(false)}}/>}

@@ -5,6 +5,7 @@ import LoginInvalid from 'pages/LoginInvalid'
 import Payment from "pages/Payment";
 import Control from "pages/Control";
 import NewProd from "pages/NewProd"
+import ExhibitionPos from "pages/ExhibitionPos";
 
 const Routing=()=>{
     return(
@@ -15,6 +16,7 @@ const Routing=()=>{
                 <Route path="/payment" element={<Payment/>}/>
                 <Route path="/control" element={<Control/>}/>
                 <Route path="/newProd" element={<NewProd/>}/>
+                <Route path="/exhibition" element={<ExhibitionPos/>}/>
             </Routes>
         </BrowserRouter>
     )

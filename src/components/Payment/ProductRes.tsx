@@ -18,9 +18,9 @@ const ProductRes=()=>{
                 <p style={{border:'none'}}>추가 결제 금액</p>
             </div>
             <div className="ProductResRight">
-                <p>{total}</p>
-                <p>{discountMoney}</p>
-                <p>{total - discountMoney}</p>
+                <p>{total.toLocaleString()}</p>
+                <p>{discountMoney.toLocaleString()}</p>
+                <p>{(total - discountMoney).toLocaleString()}</p>
                 <p>0</p>
                 <p>0</p>
                 <p className="LastPTag">0</p>

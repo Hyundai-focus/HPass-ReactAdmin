@@ -1,6 +1,7 @@
 .MenuButtons{
     height: 40vh;
     width:24vw;
+    margin-top:80px;
     margin-left:1.25vw;
 }
 .MenuButtons .MenuButtonOut{

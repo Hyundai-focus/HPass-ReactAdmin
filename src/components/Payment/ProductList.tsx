@@ -26,17 +26,6 @@ const ProductList =() =>{
         return new WebSocket(`wss://${process.env.REACT_APP_API_URL.split('//')[1]}/socket/coupon`);
     }, []); 
 
-    useEffect(() => {
-        socket.onopen = (event) => {
-          console.log("WebSocket connection opened:", event);
-        };
-        return () => {
-          socket.onclose = function (event) {
-            console.log("WebSocket connection closed:", event);
-          };
-        };
-      }, [socket]);
-
     socket.onmessage=(e)=>{
         const getCouponList= async() =>{
             try{
@@ -51,9 +40,7 @@ const ProductList =() =>{
                     setModal(true)
                 }
             }
-            catch(e){
-                return
-            }
+            catch(e){return}
         }
         getCouponList()
     }
@@ -114,8 +101,8 @@ const ProductList =() =>{
                 </div>
                 <hr/>
                 <div>
-                    <p id="leftP">총 판매 수량</p>
-                    <p id="rightP">{total.money}</p>
+                    <p id="leftP">총 판매 금액</p>
+                    <p id="rightP">{total.money.toLocaleString()}</p>
                 </div>
             </div>
             {falseModal && <NoListModal onClose={() => {setFalseModal(false)}}/>}
