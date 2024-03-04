@@ -100,8 +100,8 @@
   .Modal .CouponItem .disabled{
     background-color: grey;
   }
-  .Modal .CouponItem .disabled{
-    background-color:var(--black);
+  .Modal .CouponItem .selected{
+    background-color:#579d85;
   }
   .Modal button{
     width: 90%;

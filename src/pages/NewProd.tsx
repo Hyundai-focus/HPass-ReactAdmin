@@ -18,14 +18,13 @@ const NewProd = () => {
     const [modalData, setModalData] = useState({})
     const [prodData, setProdData] = useState([])
     const { get } = useGet();
-
+    const getProdList= async() =>{
+      try{
+          const res = await get(`${process.env.REACT_APP_API_URL}/pos/product/new/0`);
+          setProdData(res)
+        }catch(e){return}
+    }
     useEffect(() => {
-      const getProdList= async() =>{
-        try{
-            const res = await get(`${process.env.REACT_APP_API_URL}/pos/product/new/0`);
-            setProdData(res)
-          }catch(e){return}
-      }
       getProdList()
       // eslint-disable-next-line
     }, []);
@@ -72,7 +71,10 @@ const NewProd = () => {
                 </div>)
               })}
             </div>
-            {modal && <NewProdModal props={modalData} onClose={() => {setModal(false)}} memberNo={memberNo}/>}
+            {modal && <NewProdModal 
+              props={modalData} 
+              onClose={(flag) => {setModal(false)
+                                  if(flag) getProdList()}} memberNo={memberNo}/>}
             {falseModal && <NoListModal onClose={() => {setFalseModal(false)}}/>}
         </>
     )

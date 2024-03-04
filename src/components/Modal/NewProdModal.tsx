@@ -16,7 +16,7 @@ const NewProdModal = ({props, onClose, memberNo}) => {
       if(status) getProdList()
       modalRef.current.classList.add("modalFadeOut");
       setTimeout(() => {
-        onClose()
+        onClose(status)
       }, 500); // 페이드아웃 애니메이션(0.5초) 후 onClose() 호출
     }
   };

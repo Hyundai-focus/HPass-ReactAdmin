@@ -51,7 +51,7 @@ const CouponModal = ({props, onClose}) => {
             ))}
         </div>
         <button onClick={closeModal}>
-        닫기
+        확인
       </button>
       </div>
     </div>

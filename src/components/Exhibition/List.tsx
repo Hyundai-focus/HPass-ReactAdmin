@@ -10,6 +10,7 @@ const List=()=>{
     const exhibitionName = "폼페이 유물전"
     const exhibitionSubName = "<그대, 그곳에 있었다>"
     const {get} = useGet()
+    const {post} = usePost()
     const [coupon, setCoupon] = useState()
     const [couponId, setCouponId] = useState()
     const [data, setData] = useState([])
@@ -49,14 +50,18 @@ const List=()=>{
     }
     
     const CouponClick =()=>{
-        const {post} = usePost()
+        console.log(couponId)
         const setCouponTrue =async()=>{
             try{
                 await post(`${process.env.REACT_APP_API_URL}/pos/coupon/use`, {storeName : `${couponId}`})
             }
             catch(e){return}
         }
-        setCouponTrue()
+        if(couponId !== undefined) setCouponTrue()
+        setData([])
+        setTotal(0)
+        setCoupon(undefined)
+        setCouponId(undefined)
     }
 
     return(

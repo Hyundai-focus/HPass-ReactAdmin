@@ -58,7 +58,7 @@
 .ListItems{
     width: 100%;
     background-color: white;
-    border-radius: 1rem;
+    border-radius: 0rem 0rem 1rem 1rem;
     height: 40vh;
     overflow-y: auto;
 }
