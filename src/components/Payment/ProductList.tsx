@@ -42,7 +42,7 @@ const ProductList =() =>{
         const getCouponList= async() =>{
             try{
                 const res = await get(`${process.env.REACT_APP_API_URL}/pos/coupon/list/${e.data}`);
-                if(res.length() === 0) setFalseModal(true)
+                if(res.length === 0) setFalseModal(true)
                 else{
                     const dataWithIds = res.map((item, index) => ({
                         ...item,
