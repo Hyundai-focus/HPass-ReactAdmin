@@ -38,6 +38,7 @@ const ProductList =() =>{
       }, [socket]);
 
     socket.onmessage=(e)=>{
+        console.log(e)
         const getCouponList= async() =>{
             try{
                 const res = await get(`${process.env.REACT_APP_API_URL}/pos/coupon/list/${e.data}`);
