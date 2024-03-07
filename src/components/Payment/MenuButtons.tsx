@@ -37,6 +37,7 @@ const MenuButtons=()=>{
                         return (
                             <button key={index} onClick={() => dispatch(addItem(dt))}>
                                 {dt.name}
+                                <p>{dt.price.toLocaleString()}원</p>
                             </button>
                         );
                     } else return <button key={index} id="noneBtn"/>
