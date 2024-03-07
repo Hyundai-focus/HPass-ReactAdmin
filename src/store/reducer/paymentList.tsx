@@ -31,5 +31,4 @@ const dataSlice = createSlice({
   });
 
 export const { addItem, removeItem } = dataSlice.actions;
-
 export default dataSlice.reducer;

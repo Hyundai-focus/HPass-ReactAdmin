@@ -1,15 +1,16 @@
 .ProductRes{
     display:flex;
     flex-direction:row;
-    width:25vw;
-    margin-left:1.25vw;
-    margin-top: 0.5rem;
-    height: 46.85vh;
+    width:26rem;
+    height: 23rem;
+    background-color: var(--pos);
+    border: 3px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .ProductResLeft{
-    background-color: var(--black);
-    color: white;
+    color: whitesmoke;
     width: 45%;
     border-radius: 0.5rem 0rem 0rem 0.5rem;
     display: flex;
@@ -21,31 +22,76 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    height: 16.6%;
+    height: 25%;
     width: 100%;
     font-size: 1rem;
     width: 80%;
-    border-bottom: 1px solid lightgray;
 }
 .ProductResRight{
     width: 50%;
-    background-color: white;
     border-radius: 0rem 0.5rem 0.5rem 0rem;
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: white;
 }
 .ProductResRight p{  
     display: flex;
     align-items: center;
     justify-content: right;
     margin: 0;
-    height: 16.6%;
+    height: 25%;
     width: 100%;
     font-size: 1.2rem;
     width: 80%;
-    border-bottom: 1px solid grey;
 }
 .ProductRes .LastPTag{
     border: none;
+}
+
+#ProductRes{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem;
+}
+.Numbers{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+    border: 1.5px solid white;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    height: 23.2rem;
+}
+
+.Numbers .number{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.Numbers .number p{
+    background-color: var(--black);
+    margin: 0;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 6px;
+    border: 0.1rem solid white;
+    text-align: center;
+    line-height: 4rem;
+    color: white;
+}
+.Numbers .number #Enter{
+    width: 8.2rem;
+}
+#NumberRes {
+    width: 12.4rem;
+    height: 2.3rem;
+    background-color: rgb(119, 122, 134);
+    border-radius: 5px;
+    border: 0.1rem solid white;
+    border-top: 0.125rem solid white;
+    border-bottom: 0.125rem solid white;
 }

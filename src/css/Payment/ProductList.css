@@ -1,22 +1,23 @@
 .ProductList{
-    margin-left: 80px;
-    width: 67.5vw;
-    height: 56vh;
-    margin-top:80px;
+    width: 48rem;
+    height: 25rem;
+    border:3px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
 }
 .ProductListTop{
-    height: 49.5vh;
+    height: 22rem;
     background-color: white;
-    border-radius: 0.5rem;
+    border-radius: 0.15rem 0.15rem 0rem 0rem;
 }
 .TopBar{
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: var(--black);
+    background-color: var(--pos);
     color: white;
     text-align: center;
-    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    border-radius: 0.15rem 0.15rem 0rem 0rem;
     font-size: 0.8rem;
 }
 .TopBar p{
@@ -62,14 +63,13 @@
     border-top: 1px solid lightgray;
 }
 
-.TotalInfo{
-    width: 67.5vw;
-    background-color: white;
+.ProductList .TotalInfo{
+    width: 48rem;
+    background-color: var(--pos);
     height: 3rem;
     display: flex;
     flex-direction: row;
-    margin-top: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0rem 0rem 0.15rem 0.15rem;
 }
 
 .TotalInfo div{
@@ -79,14 +79,15 @@
 }
 
 .TotalInfo #leftP{
-    width: 20%;
+    width: 40%;
     margin-left: 7.5%;
-    color: gray;
+    color: white;
 }
 .TotalInfo #rightP{
-    width:60%;
+    width:40%;
     text-align: right;
     font-weight:bold;
+    color: white;
 }
 
 .TotalInfo hr{

@@ -1,85 +1,88 @@
 {
     "items": [
-        [{
-            "status": "구매",
-            "code": "PR05",
-            "name": "핸드크림 기프트 세트",
-            "price": 25000,
-            "quantity": 1,
-            "total": 25000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/202308/28/c1c7435cd015d4ae5bc4b0db5f1f5608.jpg"
-        },
-        {
-            "status": "구매",
-            "code": "PR08",
-            "name": "핸드크림&워시 듀오",
-            "price": 50000,
-            "quantity": 1,
-            "total": 50000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/202308/28/9e2a7c0254ab245db3c54df3568a333b.jpg"
-        },
+        [        
         {
             "status": "구매",
             "code": "PR12",
-            "name": "콤부차 배리옴 인텐시브 크림",
-            "price": 48000,
+            "name": "플레인스콘",
+            "price": 4800,
             "quantity": 1,
-            "total": 48000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/94ffdfb1d7886b83e5cee672dbc11318.jpg"
-        }],
-        [{
+            "total": 4800,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&amp;quality=95&amp;type=f320_320&amp;src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230118_189%2F1674022651043d0INz_JPEG%2F%25C7%25C3%25B7%25B9%25C0%25CE%25BD%25BA%25C4%25DC_1080_660.jpg"
+        },
+        {
             "status": "구매",
             "code": "PR13",
-            "name": "소듐 미네랄 앰플",
-            "price": 35000,
+            "name": "쪽파크림치즈스콘",
+            "price": 5800,
             "quantity": 1,
-            "total": 35000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/201908/27/9b442dd26078a6e484a9c6f2cce903a0.jpg"
+            "total": 5800,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=f320_320&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230118_140%2F1674022925677f7MCI_JPEG%2F%25C2%25CA%25C6%25C4%25BD%25BA%25C4%25DC_1080_660.jpg"
         },
         {
             "status": "구매",
-            "code": "PR19",
-            "name": "콤부차 배리옴 마일드 포밍 클렌저",
-            "price": 24000,
+            "code": "PR18",
+            "name": "레몬스콘",
+            "price": 5500,
             "quantity": 1,
-            "total": 24000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/6d01008cb8fb554b26e73dd6733a6ecf.jpg"
+            "total": 5500,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=f320_320&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230118_41%2F1674022806834SjmCV_JPEG%2F%25B7%25B9%25B8%25F3%25BD%25BA%25C4%25DC_1080_660.jpg"
         },
         {
             "status": "구매",
-            "code": "PR37",
-            "name": "콤부차 배리옴 에센스 토너",
-            "price": 32000,
+            "code": "PR23",
+            "name": "얼그레이스콘",
+            "price": 5200,
             "quantity": 1,
-            "total": 32000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/984ffaa10c17f95b95baddacb5dc4017.jpg"
-        }],
-        [{
-            "status": "구매",
-            "code": "PR43",
-            "name": "콤부차 배리옴 래디언스 앰플",
-            "price": 36000,
-            "quantity": 1,
-            "total": 36000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/79aaac8f106bacdfa0afe6c2e09ce93c.jpg"
+            "total": 5200,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=f320_320&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230118_294%2F1674022711945yCXD3_JPEG%2F%25BE%25F3%25B1%25D7%25B7%25B9%25C0%25CC%25BD%25BA%25C4%25DC_1080_660.jpg"
         },
         {
             "status": "구매",
-            "code": "PR52",
-            "name": "플랜티어리 UV 컷 마일드 선크림",
-            "price": 35000,
+            "code": "PR26",
+            "name": "딸기스콘",
+            "price": 5200,
             "quantity": 1,
-            "total": 35000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/202007/31/08ae5dfb39240e88bc43c1fae6327360.jpg"
+            "total": 5200,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=f320_320&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210429_17%2F1619687316820vO0Yi_PNG%2FABKW4xo5GAPB_HhA8zQbnh0x.png"
+        }],[ 
+        {
+            "status": "구매",
+            "code": "PR32",
+            "name": "코코넛스콘",
+            "price": 5200,
+            "quantity": 1,
+            "total": 5200,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=f320_320&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230118_239%2F1674022948742gBE7l_JPEG%2F%25C4%25DA%25C4%25DA%25B3%25D3%25BD%25BA%25C4%25DC_1080_660.jpg"
+        }
+        ,
+        {
+            "status": "구매",
+            "code": "PR35",
+            "name": "블루베리스콘",
+            "price": 5200,
+            "quantity": 1,
+            "total": 5200,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=f320_320&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230118_186%2F16740227006587Tt6S_JPEG%2F%25BA%25ED%25B7%25E7%25BA%25A3%25B8%25AE%25BD%25BA%25C4%25DC_1080_660.jpg"
         },
         {
             "status": "구매",
-            "code": "PR56",
-            "name": "콤부차 배리옴 릴리프 마스크 1",
-            "price": 6000,
+            "code": "PR36",
+            "name": "시나몬피칸스콘",
+            "price": 5300,
             "quantity": 1,
-            "total": 6000,
-            "img":"https://skbiolandmall.wisacdn.com/_data/product/202208/08/9146dfae7d1a41ba033e00893a752c87.jpg"
-        }]
+            "total": 5300,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=f320_320&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230118_150%2F1674022730900AzRLF_JPEG%2F%25BD%25C3%25B3%25AA%25B8%25F3%25C7%25C7%25C4%25AD%25BD%25BA%25C4%25DC_1080_660.jpg"
+        },
+        {
+            "status": "구매",
+            "code": "PR39",
+            "name": "바질페스토스콘",
+            "price": 5300,
+            "quantity": 1,
+            "total": 5300,
+            "img":"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=f320_320&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230118_150%2F1674022730900AzRLF_JPEG%2F%25BD%25C3%25B3%25AA%25B8%25F3%25C7%25C7%25C4%25AD%25BD%25BA%25C4%25DC_1080_660.jpg"
+        }
+        ]
     ]
 }
