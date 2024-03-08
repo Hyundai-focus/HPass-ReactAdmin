@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "css/Payment/MenuButtons.css"
 import { addItem } from "store/reducer/paymentList";
 import { useDispatch } from 'react-redux';
@@ -10,22 +10,28 @@ import { setCoupon } from "store/reducer/couponMoney";
 import { setCouponId } from "store/reducer/couponMoney";
 import { setTotalMoney } from "store/reducer/totalMoney";
 import usePost from "hooks/usePost";
+import {FadeLoader} from 'react-spinners'
 const MenuButtons=()=>{    
     const dispatch = useDispatch()
     const coupon = useSelector((state : RootState) => state.couponName.couponId)
+    const [loading, setLoading] = useState(false)
     const {post} = usePost()
     const clickPay =()=> {
+        setLoading(true)
         const setCouponTrue =async()=>{
             try{
                 await post(`${process.env.REACT_APP_API_URL}/pos/coupon/use`, {storeName : `${coupon}`})
             }
             catch(e){return}
         }
-        if(coupon !== -1) setCouponTrue()
-        dispatch(removeItem())
-        dispatch(setCouponId(-1))
-        dispatch(setCoupon("0")) 
-        dispatch(setTotalMoney(0))
+        setTimeout(() => {
+            setLoading(false)
+            if(coupon !== -1) setCouponTrue()
+            dispatch(removeItem())
+            dispatch(setCouponId(-1))
+            dispatch(setCoupon("0")) 
+            dispatch(setTotalMoney(0))
+          }, 1250);
     }
     return(
         <div className="MenuButtons">
@@ -59,8 +65,13 @@ const MenuButtons=()=>{
                     </div>
                 </div>
             </div>
+            {loading && <div  className="Loading">
+                <div>
+                <FadeLoader color="#d0d0d0" height={9} margin={10} radius={14} width={9} />
+                <p>결제중입니다</p>
+                </div>
+            </div>}
         </div>
     )
-
 }
 export default MenuButtons
