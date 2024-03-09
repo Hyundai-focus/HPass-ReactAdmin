@@ -2,8 +2,10 @@ import React from "react";
 import "css/Payment/PaymentHeader.css"
 import Logo from "assets/Logo_green.png"
 import { HiOutlineXMark } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 const PaymentHeader=()=>{
+    const navigate = useNavigate()
     const date = getToday()
     return(
         <div className="PaymentHeader">
@@ -12,7 +14,7 @@ const PaymentHeader=()=>{
                 <p>영업일자 : {date}</p>
                 <p id="secodP">판매원 : 카페 레이어드</p>
             </div>
-            <button><HiOutlineXMark /></button>
+            <button onClick={()=>navigate('/newProd')}><HiOutlineXMark /></button>
         </div>
     )
 }

@@ -1,6 +1,4 @@
-import React from "react";
-import SideBar from "components/SideBar";
-import Header from "components/Header";
+import React, {useEffect} from "react";
 import styled from "styled-components"
 import List from "components/Exhibition/List";
 
@@ -10,19 +8,21 @@ const Div = styled.div`
     flex-direction:row;
 `
 const ListDiv = styled.div`
-    margin-top:80px;
-    margin-left:80px;
     display: flex;
     width: 100%;
-    margin-top: 80px;
     justify-content: center;
     align-items: center;
+    margin-top:1rem
 `
-const ExhibitionPos =()=>{
+const ExhibitionPos =()=>{    
+    useEffect(() => {
+    document.body.style.backgroundColor = "#CAD2D6";
+    return () => {
+      document.body.style.backgroundColor = "var(--lightGreen)";
+    };
+  }, []); 
     return(
         <Div>
-            <Header/>
-            <SideBar props={"exhibition"}/>
             <ListDiv>
                 <List/>
             </ListDiv>

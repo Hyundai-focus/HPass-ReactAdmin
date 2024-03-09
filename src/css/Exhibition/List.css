@@ -1,21 +1,22 @@
 .List{
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 92rem;
 }
 .List .imgDiv{
     width: 100%;
-    height: 8rem;
+    height: 15rem;
     background-color: antiquewhite;
-    border-radius: 1rem;
     overflow: hidden;
     margin-bottom: 1rem;
     position: relative;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0.15rem ;
 }
 .List .imgName{
     position: absolute;
     width: 50%;
-    height: 70%;
+    height: 60%;
     bottom: 0;
     right: 0;
 }
@@ -36,12 +37,24 @@
 .List p{
     text-align: center;
 }
+.List .ListBody{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.List .ListBody .ListRes{
+    width: 82rem;
+}
 .ListHeader{
     display: flex;
     flex-direction: row;
-    background-color: var(--black);
+    background-color: var(--pos);
     color: white;
-    border-radius: 1rem 1rem 0rem 0rem;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0.15rem ;
+    border-top:3px solid whitesmoke;
+    border-right:3px solid whitesmoke;
+    border-left:3px solid whitesmoke;
 }
 .List #nameTag{
     width: 50%;
@@ -58,8 +71,7 @@
 .ListItems{
     width: 100%;
     background-color: white;
-    border-radius: 0rem 0rem 1rem 1rem;
-    height: 40vh;
+    height: 26.25rem;
     overflow-y: auto;
 }
 .ListItem{
@@ -67,14 +79,18 @@
     flex-direction: row;
 }
 .List .totalEx{
-    background-color: white;
+    background-color: var(--pos);
     display: flex;
     flex-direction: row;
-    border-radius: 0.5rem;
-    width: 100%;
-    height: 5rem;
+    border-radius: 0rem 0rem 0.15rem 0.15rem;
+    height: 6rem;
     align-items: center;
+    border-bottom:3px solid whitesmoke;
+    border-right:3px solid whitesmoke;
+    border-left:3px solid whitesmoke;
+    color: white;
 }
+
 .List .totalEx #totalMoney{
     width: 30%;
 }
@@ -92,38 +108,59 @@
 .List .totalEx #totalResult{
     width: 30%;
 }
-.List #totalCoupon #couponName{
-    font-size: 0.75rem;
-}
 .List #totalCoupon #couponMoney{
     margin-top: 0px;
 }
 .List .ListButton{
-    width: 100%;
-    height: 4rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    margin-left: 0.25rem;
 }
 
 .List .ListButton button{
-    width: 24.8%;
-    height: 4rem;
+    width: 10rem;
+    height: 17.5%;
     border: none;
-    border-radius: 0.5rem;
-    background-color: var(--black);
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bolder;
+    background-color: #51566beb;
+    border: 3px solid white;
+    border-radius: 5px;
+    word-break: keep-all;
 }
 .List .ListButton #clear{
-    background-color: rgb(165, 0, 0);
+    background-color: #5f626ceb;
 }
-.List .payButton{
-    height: 4rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: var(--black);
+.List .ListButton .payButton{
+    height: 28%;
     color: white;
     font-size: 1.1rem;
     font-weight: bolder;
+    background-color: var(--pos);
+    border: 3px solid white;
+    border-radius: 5px;
+}
+
+.List .Loading {
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+  }
+.List .Loading div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    z-index: 999;
 }
