@@ -128,12 +128,14 @@ const List=()=>{
                     <button id="clear" onClick={() => {setData([]) 
                         setCoupon(undefined)}}>초기화</button>
                     <button className="payButton" onClick={CouponClick}>결제</button>
-                    {falseModal && <NoListModal onClose={() => {setFalseModal(false)}}/>}
-                    {modal && <ExhibitionModal props={couponList} onClose={(selectedC) => {setCouponId(selectedC.id)
-                                                                                            setCoupon(selectedC.name)
-                                                                                            setModal(false)}}/>}
                 </div>
             </div>
+            {falseModal && <NoListModal onClose={() => {setFalseModal(false)}}/>}
+            {modal && <ExhibitionModal props={couponList} 
+                        onClose={(selectedC) => {setCouponId(selectedC.id)
+                                                 setCoupon(selectedC.name)
+                                                 setModal(false)}}/>}
+
             {pay && <div className="Loading">
                 <div>
                 <FadeLoader color="#d0d0d0" height={9} margin={10} radius={14} width={9} />
